@@ -9,11 +9,11 @@ luoti = float(input("\nAnna luodit.\n"))
 #Naula = 425,6g, 32 luotia
 #Luoti = 13,3g
 
-#laskukaava #simppelimpi keinokin varmaan on
+#lasketaan muutos ja kg ja g
 muunto = leiviska * 8512 + naula * 425.6 + luoti * 13.3
-kilogram = int(muunto / 1000)
-gram = muunto - kilogram * 1000
+kilogram = muunto // 1000
+gram = muunto % 1000
 
 #Tulostetaan tulokset
 print(f"\nMassa nykymittojen mukaan:\n"
-      f"{kilogram} kilogrammaa ja {gram:.2f} grammaa.")
+      f"{kilogram:.0f} kilogrammaa ja {gram:.2f} grammaa.")
