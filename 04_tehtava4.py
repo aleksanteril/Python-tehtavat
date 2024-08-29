@@ -10,7 +10,7 @@ while(player_guess != rand_luku):
     player_guess = int(input("Arvaa luku välillä 1 - 10: "))
     if player_guess < rand_luku:
         print("Liian pieni arvaus")
-    if player_guess > rand_luku:
+    elif player_guess > rand_luku:
         print("Liian suuri arvaus")
 
 #Jos luku on sama kuin arvottu luku poistutaan loopista ja printataan onnittelut

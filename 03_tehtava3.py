@@ -15,7 +15,7 @@ if sukupuoli == "Mies":
     elif hemglob<134:
         print("Arvo alhainen!")
 
-if sukupuoli == "Nainen":
+elif sukupuoli == "Nainen":
     if 117 <= hemglob <= 175:
         print("Arvo normaali")
     elif hemglob>175:

@@ -11,7 +11,7 @@ while (syotto != ""):
     #Ja lisätään aina pienin ja suurin vertailun avulla muistiin
     if int(syotto) < pienin:
         pienin = int(syotto)
-    if int(syotto) > suurin:
+    elif int(syotto) > suurin:
         suurin = int(syotto)
 
     syotto = input("Syötä luku, jos haluat lopettaa syötä tyhjä: ")
