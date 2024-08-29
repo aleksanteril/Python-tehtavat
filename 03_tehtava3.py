@@ -8,20 +8,20 @@ sukupuoli = input("Mikä on sukupuolesi? Mies/Nainen: ")
 hemglob = int(input("Mikä on hemoglobiiniarvosi? g/l: "))
 
 if sukupuoli == "Mies":
-    if 134 <= hemglob <= 195:
-        print("Arvo normaali")
-    elif hemglob>195:
+    if hemglob>195:
         print("Arvo korkea!")
     elif hemglob<134:
         print("Arvo alhainen!")
+    else:
+        print("Arvo normaali")
 
 elif sukupuoli == "Nainen":
-    if 117 <= hemglob <= 175:
-        print("Arvo normaali")
-    elif hemglob>175:
+    if hemglob>175:
         print("Arvo korkea!")
     elif hemglob<117:
         print("Arvo alhainen!")
+    else:
+        print("Arvo normaali")
 
 #Ilmoitetaan onko käyttäjän arvo
 #hänelle alhainen, korkea vai normaali
