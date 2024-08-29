@@ -1,18 +1,23 @@
 
+#Luodaan vakioarvot ja muuttujat, yritysten määrä muuttuja helppoa testiä varten
 user = "python"
 passw = "rules"
-tries = 0
+tries_amount = 5
+tries = inp_user = inp_passw = 0
 
-
-while(tries != 5):
-    inp_user = input("Syötä käyttäjätunnus: ")
+#While kysyy käyttäjältä inputtia kunnes käyttis ja salis on match tai
+#Yritysten määrä on ylittänyt asetetun arvon 5
+while (inp_user != user or inp_passw != passw) and tries != tries_amount:
+    inp_user = input("\nSyötä käyttäjätunnus: ")
     inp_passw = input("Syötä salasana: ")
-    if inp_user != user or inp_passw != passw:
-        print("\nPääsy evätty")
-        tries = tries + 1
-    elif inp_user == user and inp_passw == passw:
-        print("\nTervetuloa")
-        break
+    tries = tries + 1
+
+#Printataan tulos käyttäjälle, jos yritykset ylittyivät niin pääsy evätty
+#Muuten ok tervetuloa
+if tries == tries_amount:
+    print("\nPääsy evätty")
+else:
+    print("\nTervetuloa!")
 
 
 
