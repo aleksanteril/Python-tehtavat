@@ -12,4 +12,4 @@ if kuha_mitta < kuha_alamitta:
           f"Kuha on {(kuha_alamitta - kuha_mitta):.1f}cm alle sallitun mitan!")
 
 
-#Kuha on alamittainen jos sen pituus on >37cm
+#Kuha on alamittainen jos sen pituus on <37cm
