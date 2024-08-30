@@ -16,9 +16,11 @@ while kerrat != total_count:
         ymp_sisalla = ymp_sisalla + 1
     kerrat = kerrat + 1
 
+    #Jos haluaa nähdä loopin livenä niin poista kommentti tästä koodista!! HAUSKAA
+    #print(4 * ymp_sisalla / kerrat, kerrat)
+
 #Kun loop on saatu ajettua lasketaan pi liki arvo kaavalla pi = 4n/N
 #Eli ympyrän sisälläolevat * 4 jaettuna kaikilla pisteillä
 pi_likiarvo = 4 * ymp_sisalla / total_count
-
-#Tulostetaan tulos käyttäjälle
 print(pi_likiarvo)
+#Tulostetaan tulos käyttäjälle
