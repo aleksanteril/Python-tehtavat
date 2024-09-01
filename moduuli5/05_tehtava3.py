@@ -8,10 +8,7 @@ jkerta = False
 #for loopilla käydään läpi numerot 2 - syötetty luku
 #Ja jaetaan aina joka kierroksella luku, jos tasan jakoja tapahtuu niin nostetaan lippu
 #ja lopetetaan for loop ajan säästämiseksi
-if in_luku == 1 or in_luku == 0:
-    jkerta = True
-
-else:
+if in_luku != 1 or in_luku != 0:
     for i in range(2,in_luku):
         if in_luku % i == 0:
             jkerta = True
@@ -19,7 +16,7 @@ else:
 
 #Ilmoitetaan tulos jos lippu on nostettu luku ei ole alkuluku
 #muuten Luku on alkuluku
-if jkerta == True:
+if jkerta or in_luku == 1 or in_luku == 0:
     print(f"{in_luku} ei ole alkuluku!")
 else:
     print(f"{in_luku} on alkuluku!!")
