@@ -1,20 +1,25 @@
 
+
 #Kysytään käyttäjältä kokonaisluku
 in_luku = int(input("Hei! Syötä kokonaisluku: "))
-jkerta = 0
+jkerta = False
 
 #Tarkistetaan onko syötetty luku alkuluku
-#for loopilla käydään läpi numerot 1 - syötetty luku
-#Ja jaetaan aina joka kierroksella luku, jos tasan jakoja on vain 2
-#lisätään kerrat tarkistukseen 1
-for i in range(1,in_luku+1):
-    if in_luku % i == 0:
-        jkerta = jkerta + 1
+#for loopilla käydään läpi numerot 2 - syötetty luku
+#Ja jaetaan aina joka kierroksella luku, jos tasan jakoja tapahtuu niin nostetaan lippu
+#ja lopetetaan for loop ajan säästämiseksi
+if in_luku == 1 or in_luku == 0:
+    jkerta = True
 
-
-#Ilmoitetaan tulos jos jakokertoja on vain 2
-#Luku on alkuluku
-if jkerta == 2:
-    print(f"{in_luku} on alkuluku!!")
 else:
+    for i in range(2,in_luku):
+        if in_luku % i == 0:
+            jkerta = True
+            break
+
+#Ilmoitetaan tulos jos lippu on nostettu luku ei ole alkuluku
+#muuten Luku on alkuluku
+if jkerta == True:
     print(f"{in_luku} ei ole alkuluku!")
+else:
+    print(f"{in_luku} on alkuluku!!")
