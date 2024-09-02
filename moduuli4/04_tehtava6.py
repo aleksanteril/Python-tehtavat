@@ -13,8 +13,8 @@ while kerrat != total_count:
     x_arvo = random.uniform(-1,1)
     y_arvo = random.uniform(-1,1)
     if (pow(x_arvo, 2) + pow(y_arvo, 2)) < 1:
-        ymp_sisalla = ymp_sisalla + 1
-    kerrat = kerrat + 1
+        ymp_sisalla +=1
+    kerrat +=1
 
     #Jos haluaa nähdä loopin livenä niin poista kommentti tästä koodista!! HAUSKAA
     #print(4 * ymp_sisalla / kerrat, kerrat)
