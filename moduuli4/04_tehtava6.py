@@ -10,8 +10,8 @@ ymp_sisalla = kerrat = 0
 #Arvotaan x ja y arvot väliltä -1 ja 1, lasketaan epäyhtälöllä
 #Ovatko koordinaatit ympyrän sisällä ja merkataan ylös jos ovat
 while kerrat != total_count:
-    x_arvo = abs(random.uniform(-1,1))
-    y_arvo = abs(random.uniform(-1,1))
+    x_arvo = random.uniform(-1,1)
+    y_arvo = random.uniform(-1,1)
     if (pow(x_arvo, 2) + pow(y_arvo, 2)) < 1:
         ymp_sisalla = ymp_sisalla + 1
     kerrat = kerrat + 1
