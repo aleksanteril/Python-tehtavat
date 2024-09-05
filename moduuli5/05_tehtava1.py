@@ -10,7 +10,11 @@ silmaluvut = []
 for i in range(noppalkm):
     silmaluvut.append(random.randint(1, 6))
 
-#Tulostetaan noppien lukujen summa
-#print(silmaluvut)
-print (sum(silmaluvut))
+#Lasketaan for loopilla yhteen lista
+summa = 0
+for num in silmaluvut:
+    summa += num
+
+#Tulostetaan saatu summa
+print(summa)
 
