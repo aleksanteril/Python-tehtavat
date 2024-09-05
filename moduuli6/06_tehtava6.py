@@ -9,7 +9,7 @@ import math
 def pizzatiedot(num, arvo):
     return float(input(f"Syötä pizzan {num} {arvo}: "))
 
-    #Lasketaan pizzan pinta-ala ja muutetaan returnissa vielä neliömetreiksi
+#Lasketaan pizzan pinta-ala ja muutetaan returnissa vielä neliömetreiksi
 def pizzavalue(halkaisija, hinta):
     area = math.pi * ((halkaisija/2)**2)
     value = hinta / (area/10000)
@@ -20,11 +20,12 @@ def pizzavalue(halkaisija, hinta):
 #ja ilmoitetaan kummassa on parempi arvo suhteessa pinta-alaan
 pizzavaluelist = []
 for i in range (1,3):
-    pizzavaluelist.append(
-        pizzavalue(pizzatiedot(i, "halkaisija cm"), pizzatiedot(i, "hinta euroa"))
-    )
+    halkaisija = pizzatiedot(i, "halkaisija cm")
+    hinta = pizzatiedot(i, "hinta euroa")
+    pizzavaluelist.append(pizzavalue(halkaisija, hinta))
 
-#Vertaillaan pizzat listalla, ei voi olla kuin 2
+
+#Vertaillaan pizzat listalla
 if pizzavaluelist[0] < pizzavaluelist[1]:
     print(f"Pizza 1 on parempi hintasuhde! {pizzavaluelist[0]:.2f} e/neliö")
 else:
