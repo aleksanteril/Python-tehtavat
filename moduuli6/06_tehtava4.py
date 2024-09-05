@@ -1,10 +1,15 @@
 
 #Aliohjelma joka summaa listan yhteen
-def lista_summaus(numlista):
-    return sum(numlista)
 
+#Myös voisi käyttää sum funktiota!!
+#Aliohjelma listan summaukseen
+def summaus(numlista):
+    sum = 0
+    for num in numlista:
+        sum += num
+    return sum
 
 #Pääohjelma jossa kutsutaan aliohjelmaa ja tulostetaan tulos
-intlista = [1, 6, 7, 24, 13]
-intlista_tulos = lista_summaus(intlista)
+intlista = [1, 8, 6, 5]
+intlista_tulos = summaus(intlista)
 print (intlista_tulos)
