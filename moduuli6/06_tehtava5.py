@@ -4,7 +4,7 @@
 #Funktio palauttaa listan
 
 def pariton_karsinta(listaint):
-    pari_listaint =[]
+    pari_listaint = []
     for num in listaint:
         if num % 2 == 0:
             pari_listaint.append(num)
