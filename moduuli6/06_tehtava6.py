@@ -24,6 +24,7 @@ for i in range (1,3):
         pizzavalue(pizzatiedot(i, "halkaisija cm"), pizzatiedot(i, "hinta euroa"))
     )
 
+#Vertaillaan pizzat listalla, ei voi olla kuin 2
 if pizzavaluelist[0] < pizzavaluelist[1]:
     print(f"Pizza 1 on parempi hintasuhde! {pizzavaluelist[0]:.2f} e/neliö")
 else:
