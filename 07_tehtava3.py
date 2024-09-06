@@ -16,7 +16,7 @@ while True:
         lentoasemat[icao] = nimi
     elif komento == "hae":
         icaoQ = input("Syötä haettava ICAO-koodi: ")
-        if icaoinp in lentoasemat:
+        if icaoQ in lentoasemat:
             print(f"{icaoQ} tunnuksen lentoasema on: {lentoasemat[icaoQ]}")
         else:
             print("Ei vastaavuuksia")
