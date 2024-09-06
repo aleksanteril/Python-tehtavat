@@ -18,6 +18,7 @@ def pizzavalue(halkaisija, hinta):
 
 #Pääohjelmassa kysytään kahden pizzan halkaisijat ja hinnat
 #ja ilmoitetaan kummassa on parempi arvo suhteessa pinta-alaan
+#Voidaan i rangea muuttamalla muuttaa kuinka monta pizzaa kysytään
 pizzavaluelist = []
 for i in range (1,3):
     halkaisija = pizzatiedot(i, "halkaisija cm")
@@ -26,7 +27,18 @@ for i in range (1,3):
 
 
 #Vertaillaan pizzat listalla
-if pizzavaluelist[0] < pizzavaluelist[1]:
-    print(f"Pizza 1 on parempi hintasuhde! {pizzavaluelist[0]:.2f} e/neliö")
-else:
-    print(f"Pizza 2 on parempi hintasuhde! {pizzavaluelist[1]:.2f} e/neliö")
+halvin = pizzavaluelist[0]
+pizzanro = 1
+for pizza in pizzavaluelist:
+    if pizza < halvin:
+        halvin = pizza
+        pizzanro = pizzavaluelist.index(pizza)+1
+
+#Tulostetaan käyttäjälle halvin pizza
+print(f"Pizza {pizzanro} antaa parhaimman vastineen rahalle: {halvin:.2f} e/neliömetri")
+
+#Vanha simppelimpi vertailu toimii vain kahdelle pizzalle niinkuin tehtävässä haluttiin alkuperäisesti
+#if pizzavaluelist[0] < pizzavaluelist[1]:
+    #print(f"Pizza 1 on parempi hintasuhde! {pizzavaluelist[0]:.2f} e/neliö")
+#else:
+    #print(f"Pizza 2 on parempi hintasuhde! {pizzavaluelist[1]:.2f} e/neliö")
