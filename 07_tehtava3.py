@@ -3,8 +3,7 @@
 lentoasemat = {"EFFI" : "Helsinki-Vantaan lentokenttä"}
 #Funktio sanakirjaan lisäämiseen
 def syotauusi():
-    asema = input("Syötä lentoaseman nimi: "),
-    icao = input("Syötä lentoaseman ICAO-koodi: ")
+    asema, icao = input("Syötä lentoaseman nimi: "), input("Syötä lentoaseman ICAO-koodi: ")
     return asema, icao
 
 while True:
@@ -16,9 +15,9 @@ while True:
         nimi, icao = syotauusi()
         lentoasemat[icao] = nimi
     elif komento == "hae":
-        icaoinp = input("Syötä haettava ICAO-koodi: ")
+        icaoQ = input("Syötä haettava ICAO-koodi: ")
         if icaoinp in lentoasemat:
-            print(f"{icaoinp} tunnuksen lentoasema on: {lentoasemat[icaoinp]}")
+            print(f"{icaoQ} tunnuksen lentoasema on: {lentoasemat[icaoQ]}")
         else:
             print("Ei vastaavuuksia")
     elif komento == "lopeta":
