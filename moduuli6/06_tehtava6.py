@@ -26,16 +26,14 @@ for i in range (1,3):
     pizzavaluelist.append(pizzavalue(halkaisija, hinta))
 
 
-#Vertaillaan pizzat listalla
+#Vertaillaan pizzat listalla ja talletetaan halvin löydetty
 halvin = pizzavaluelist[0]
-pizzanro = 1
 for pizza in pizzavaluelist:
     if pizza < halvin:
         halvin = pizza
-        pizzanro = pizzavaluelist.index(pizza)+1
 
 #Tulostetaan käyttäjälle halvin pizza
-print(f"Pizza {pizzanro} antaa parhaimman vastineen rahalle: {halvin:.2f} e/neliömetri")
+print(f"Pizza {pizzavaluelist.index(halvin)+1} antaa parhaimman vastineen rahalle: {halvin:.2f} e/neliömetri")
 
 #Vanha simppelimpi vertailu toimii vain kahdelle pizzalle niinkuin tehtävässä haluttiin alkuperäisesti
 #if pizzavaluelist[0] < pizzavaluelist[1]:
