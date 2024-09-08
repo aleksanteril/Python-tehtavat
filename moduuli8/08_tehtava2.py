@@ -10,17 +10,20 @@ yhteys = mysql.connector.connect(
          autocommit=True
          )
 
-#Aliohjelma kyselyä varten jossa tulostetaan nimi ja kunta ICAO koodin perusteella
-def namequery(icao):
-    sql = (f"SELECT name, municipality "
+
+def airportcount(iso):
+    sql = (f"SELECT type, count(*) "
            f"FROM airport "
-           f"WHERE ident = '{icao}';")
+           f"WHERE iso_country = '{iso}'"
+           f"group by type "
+           f"order by count(*) desc; ")
     kursori = yhteys.cursor()
     kursori.execute(sql)
     tulos = kursori.fetchall()
     for tulo in tulos:
-        print(f"Lentoasema {tulo[0]} sijaitsee kunnassa {tulo[1]}")
+        print(f"Tyyppi: {tulo[0]} Määrä: {tulo[1]}")
     return
 
-icao = input("Syötä haettava ICAO koodi: ")
-namequery(icao)
+iso = input("Syötä maatunnus: ")
+airportcount(iso)
+
