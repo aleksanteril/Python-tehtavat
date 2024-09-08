@@ -10,7 +10,7 @@ yhteys = mysql.connector.connect(
          autocommit=True
          )
 
-
+#Aliohjelma lentokenttien tyypin ja määrän saamiseksi maatunnuksella
 def airportcount(iso):
     sql = (f"SELECT type, count(*) "
            f"FROM airport "
@@ -24,6 +24,7 @@ def airportcount(iso):
         print(f"Tyyppi: {tulo[0]} Määrä: {tulo[1]}")
     return
 
+#Pääohjelma, kysytään maatunnus ja kutsutaan aliohjelmaa
 iso = input("Syötä maatunnus: ")
 airportcount(iso)
 

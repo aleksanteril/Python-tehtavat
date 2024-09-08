@@ -22,5 +22,6 @@ def namequery(icao):
         print(f"Lentoasema {tulo[0]} sijaitsee kunnassa {tulo[1]}")
     return
 
+#Pääohjelma, kysytään ICAO koodi ja kutsutaan aliohjelmalla kysely
 icao = input("Syötä haettava ICAO koodi: ")
 namequery(icao)
