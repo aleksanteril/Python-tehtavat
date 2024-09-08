@@ -25,3 +25,4 @@ def namequery(icao):
 #Pääohjelma, kysytään ICAO koodi ja kutsutaan aliohjelmalla kysely
 icao = input("Syötä haettava ICAO koodi: ")
 namequery(icao)
+

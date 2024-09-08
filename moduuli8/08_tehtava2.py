@@ -28,3 +28,4 @@ def airportcount(iso):
 iso = input("Syötä maatunnus: ")
 airportcount(iso)
 
+
