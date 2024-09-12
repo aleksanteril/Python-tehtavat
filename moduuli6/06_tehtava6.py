@@ -35,8 +35,3 @@ for pizza in pizzavaluelist:
 #Tulostetaan käyttäjälle halvin pizza
 print(f"Pizza {pizzavaluelist.index(halvin)+1} antaa parhaimman vastineen rahalle: {halvin:.2f} e/neliömetri")
 
-#Vanha simppelimpi vertailu toimii vain kahdelle pizzalle niinkuin tehtävässä haluttiin alkuperäisesti
-#if pizzavaluelist[0] < pizzavaluelist[1]:
-    #print(f"Pizza 1 on parempi hintasuhde! {pizzavaluelist[0]:.2f} e/neliö")
-#else:
-    #print(f"Pizza 2 on parempi hintasuhde! {pizzavaluelist[1]:.2f} e/neliö")
