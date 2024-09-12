@@ -1,8 +1,5 @@
 
 #Aliohjelma joka summaa listan yhteen
-
-#Myös voisi käyttää sum funktiota!!
-#Aliohjelma listan summaukseen
 def summaus(numlista):
     sum = 0
     for num in numlista:
