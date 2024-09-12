@@ -6,9 +6,9 @@
 def gal_to_lit(gallon):
     return gallon*3.785
 
-#Kysytään käyttäjältä syöte kunnes käyttäjä syöttää tyhjän
-galstr = input("Syötä gallona määrä, jos haluat lopettaa syötä tyhjä: ")
-while galstr != "":
-    litra = gal_to_lit(float(galstr))
+#Kysytään käyttäjältä syöte kunnes käyttäjä syöttää negatiivisen luvun
+gal = float(input("Syötä gallona määrä, jos haluat lopettaa syötä tyhjä: "))
+while gal >= 0:
+    litra = gal_to_lit(gal)
     print(litra)
-    galstr = input("Syötä gallona määrä, jos haluat lopettaa syötä tyhjä: ")
+    gal = float(input("Syötä gallona määrä, jos haluat lopettaa syötä tyhjä: "))
