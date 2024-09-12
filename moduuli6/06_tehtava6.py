@@ -7,7 +7,7 @@ import math
 
 #Aliohjelma arvojen kysymistä varten
 def pizzatiedot(num, arvo):
-    return float(input(f"Syötä pizzan {num} {arvo}: "))
+    return float(input(f"Syötä pizzan {num}. {arvo}: "))
 
 #Lasketaan pizzan pinta-ala ja muutetaan returnissa vielä neliömetreiksi
 def pizzavalue(halkaisija, hinta):
