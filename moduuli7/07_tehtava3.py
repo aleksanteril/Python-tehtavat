@@ -12,7 +12,7 @@ def syotauusi(lentoasemat):
     asema = input("Syötä lentoaseman nimi: ")
     icao = input("Syötä lentoaseman ICAO-koodi: ")
     lentoasemat[icao] = asema
-    return lentoasemat
+    return
 
 #Aliohjelma hakua varten
 def haku(lentoasemat):
@@ -32,7 +32,7 @@ lentoasemat = {"EFHK" : "Helsinki-Vantaan lentokenttä"}
 while komento != "lopeta":
     komento = valinta()
     if komento == "syötä":         #syöttö ja sanakirjaan lisäys hoidetaan aliohjelman avulla
-        lentoasemat = syotauusi(lentoasemat)
+        syotauusi(lentoasemat)
     elif komento == "hae":         #Haussa tarkistetaan löytyykö vastaavuuksia ja printataan aseman nimi
         haku(lentoasemat)
     elif komento != "lopeta":                           #Jos komento tuntematon  tulostetaan käyttäjälle ilmoitus
