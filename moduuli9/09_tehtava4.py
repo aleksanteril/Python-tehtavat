@@ -31,13 +31,23 @@ class Auto:
         return
 
 
-#Funktio jolla tarkistetaan matka listasta
-def tarkistaMatka(autotLista):
-    for i in range(len(autotLista)):
-        if autotLista[i].kuljettuMatka >= 10000:
-            print(f"{autotLista[i].rekTunnus}, on voittaja!")
-            return False
-    return True
+#Tarkista matka, rekursiivinen tapa harjoitus
+def tarkistaMatka(i):
+    if i < 0:
+        return True
+    elif autotLista[i].kuljettuMatka < 10000:
+        return tarkistaMatka(i - 1)
+    print(f"{autotLista[i].rekTunnus}, on voittaja!")
+    return False
+
+
+#Funktio jolla tarkistetaan matka listasta, iteratiivinen tapa
+#def tarkistaMatka():
+#    for i in range(len(autotLista)):
+#        if autotLista[i].kuljettuMatka >= 10000:
+#            print(f"{autotLista[i].rekTunnus}, on voittaja!")
+#            return False
+#    return True
 
 #Luodaan autoille lista ja luodaan 10 autoa
 autotLista = []
@@ -47,7 +57,7 @@ for i in range(10):
 
 
 #Kiihdytyskisa kunnes kuljettumatka yli 10000km
-while tarkistaMatka(autotLista):
+while tarkistaMatka(len(autotLista)-1):
 
     #Käydään läpi jokaiselle autolle nopeudenmuutos
     #Ajetaan jokaisella autolla 1h
@@ -61,4 +71,4 @@ while tarkistaMatka(autotLista):
 #Tulostetaan kaikki ominaisuudet autoista
 print('\n')
 for i in range(len(autotLista)):
-    print(f"{autotLista[i].rekTunnus}, {autotLista[i].huippuNopeus}, {autotLista[i].nopeus}, {autotLista[i].kuljettuMatka}")
+    autotLista[i].haeTiedot()
