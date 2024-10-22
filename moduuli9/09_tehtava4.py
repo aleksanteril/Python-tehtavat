@@ -31,7 +31,7 @@ class Auto:
         return
 
 
-
+#Funktio jolla tarkistetaan matka listasta
 def tarkistaMatka(autotLista):
     for i in range(len(autotLista)):
         if autotLista[i].kuljettuMatka >= 10000:
@@ -58,6 +58,7 @@ while tarkistaMatka(autotLista):
 
 
 
+#Tulostetaan kaikki ominaisuudet autoista
 print('\n')
 for i in range(len(autotLista)):
     print(f"{autotLista[i].rekTunnus}, {autotLista[i].huippuNopeus}, {autotLista[i].nopeus}, {autotLista[i].kuljettuMatka}")
