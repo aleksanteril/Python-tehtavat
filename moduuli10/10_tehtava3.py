@@ -7,16 +7,21 @@ class Talo:
 
     #Ajetaan talon hisseillä 1-joku, ja kohdekerros. Jos ei onnistunut kerrotaan siitä
     def ajaHissiä(self, hissiNumero, targetKerros):
-        print(f"Ajetaan hissi {hissiNumero}: kerroksesta {self.hissiLista[hissiNumero-1].currentKerros} kerrokseen {targetKerros}")
-        if not self.hissiLista[hissiNumero-1].siirry_kerrokseen(targetKerros):
-            print(f"\nHissi numero {hissiNumero}, ei ole määritetty kerros")
+        if self.hissiLista[hissiNumero-1].currentKerros == targetKerros:
+            print(f"Hissi {hissiNumero} on jo pyydetyssä kerroksessa!\n")
             return
+        print(f"Ajetaan hissi {hissiNumero}: kerroksesta {self.hissiLista[hissiNumero - 1].currentKerros} kerrokseen {targetKerros}")
+        if (targetKerros < self.hissiLista[hissiNumero-1].alinKerros
+            or targetKerros > self.hissiLista[hissiNumero-1].ylinKerros):
+            print(f"Hissi numero {hissiNumero}: {targetKerros} ei ole määritetty kerros\n")
+            return
+        self.hissiLista[hissiNumero-1].siirry_kerrokseen(targetKerros)
         print(f"Hissi numero {hissiNumero} on saapunut kerrokseen {self.hissiLista[hissiNumero-1].currentKerros}\n")
         return
 
     #Palohälytys ajetaan kaikki hissit pohjakerrokseen
     def paloHälytys(self):
-        print("\nPalohälytys ajetaan kaikki hissit pohjakerrokseen!")
+        print("Palohälytys ajetaan kaikki hissit pohjakerrokseen!\n")
         for i in range(len(self.hissiLista)):
             self.ajaHissiä(i+1, self.hissiLista[i].alinKerros)
         return
@@ -29,15 +34,13 @@ class Hissi:
 
     #Metodi jolla hissin kerrosta siirretään
     def siirry_kerrokseen(self, targetKerros):
-        if self.alinKerros <= targetKerros <=self.ylinKerros:
-            if self.currentKerros > targetKerros:
-                self.kerros_alas()
-            elif self.currentKerros < targetKerros:
-                self.kerros_ylös()
-            if self.currentKerros != targetKerros:
-                self.siirry_kerrokseen(targetKerros)
-            return True
-        return False
+        if self.currentKerros > targetKerros:
+            self.kerros_alas()
+        elif self.currentKerros < targetKerros:
+            self.kerros_ylös()
+        if self.currentKerros != targetKerros:
+            self.siirry_kerrokseen(targetKerros)
+        return
 
     #Metodi jolla hissi liikkuu ylös
     def kerros_ylös(self):
@@ -58,3 +61,11 @@ talo1.ajaHissiä(3,5)
 talo1.ajaHissiä(1,1)
 talo1.ajaHissiä(2,3)
 talo1.paloHälytys()
+
+talo2 = Talo(-2, 10,4)
+talo2.ajaHissiä(3,30)
+talo2.ajaHissiä(2, 6)
+talo2. ajaHissiä(4,-1)
+talo2.paloHälytys()
+
+talo1.ajaHissiä(2,5)
