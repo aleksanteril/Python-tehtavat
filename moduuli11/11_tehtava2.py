@@ -47,7 +47,7 @@ polttomoottoriauto = Polttomoottoriauto("ACD-123", 165, 32.3)
 #Asetetaan nopeudet autoille
 sähköauto.kiihdytä(60)
 polttomoottoriauto.kiihdytä(100)
-
+#ddfd
 #Ajetaan autoilla 3h
 sähköauto.kulje(3)
 polttomoottoriauto.kulje(3)
