@@ -11,20 +11,20 @@ class Kilpailu:
     #Käydään läpi jokaiselle autolle nopeudenmuutos
     #Ajetaan jokaisella autolla 1h
     def tuntiKuluu(self):
-        for i in range(len(self.autotLista)):
+        for auto in self.autotLista:
             nopeudenMuutos = random.randint(-10,15)
-            self.autotLista[i].kiihdytä(nopeudenMuutos)
-            self.autotLista[i].kulje(1)
+            auto.kiihdytä(nopeudenMuutos)
+            auto.kulje(1)
         self.tuntejaKulunut += 1
 
     def tulostaTilanne(self):
-        for i in range(len(self.autotLista)):
-            self.autotLista[i].haeTiedot()
+        for auto in autotLista:
+            auto.haeTiedot()
 
     def kilpailuOhi(self):
-        for i in range(len(self.autotLista)):
-            if self.autotLista[i].kuljettuMatka > self.pituusKm:
-                print(f"\n{self.autotLista[i].rekTunnus}, on voittaja! Kilpailu {self.kilpailunNimi.upper()} on päättynyt")
+        for auto in self.autotLista:
+            if auto.kuljettuMatka > self.pituusKm:
+                print(f"\n{auto.rekTunnus}, on voittaja! Kilpailu {self.kilpailunNimi.upper()} on päättynyt")
                 return True
         return False
 
