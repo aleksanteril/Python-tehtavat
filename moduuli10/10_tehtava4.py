@@ -28,6 +28,16 @@ class Kilpailu:
                 return True
         return False
 
+    #def kilpailuOhi(self, i):
+    #    if i < 0:
+    #        return False
+    #    elif autotLista[i].kuljettuMatka < self.pituusKm:
+    #        return self.kilpailuOhi(i-1)
+    #    print(f"\n{autotLista[i].rekTunnus}, on voittaja! Kilpailu {self.kilpailunNimi.upper()} on päättynyt")
+    #    return True
+
+
+
 
 # Luodaan luokka auto, jossa on ominaisuudet olioilla
 class Auto:
