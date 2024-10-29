@@ -28,12 +28,6 @@ class Kilpailu:
                 return True
         return False
 
-    def tenTuntiaKulunut(self):
-        if self.tuntejaKulunut < 10:
-            return False
-        print("\nKYMMENEN TUNNIN RAPORTTI")
-        return True
-
 
 # Luodaan luokka auto, jossa on ominaisuudet olioilla
 class Auto:
@@ -79,5 +73,6 @@ romuralli = Kilpailu("Suuri Romuralli", 8000, autotLista)
 
 while not romuralli.kilpailuOhi():
     romuralli.tuntiKuluu()
-    if romuralli.tenTuntiaKulunut():
+    if romuralli.tuntejaKulunut > 10:
+        print("\nKYMMENEN TUNNIN RAPORTTI")
         romuralli.tulostaTilanne()
