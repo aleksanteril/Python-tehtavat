@@ -16,7 +16,8 @@ try:
     #Jos yhteydenotto ei ok
     if vastaus.status_code != 200:
         virhe()
-    vastaus = vastaus.json()
-    print(vastaus["value"])
+    else:
+        vastaus = vastaus.json()
+        print(vastaus["value"])
 except requests.exceptions.RequestException:
     virhe()
