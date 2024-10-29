@@ -7,12 +7,17 @@ class Talo:
 
     #Ajetaan talon hisseillä 1-joku, ja kohdekerros. Jos ei onnistunut kerrotaan siitä
     def ajaHissiä(self, hissiNumero, targetKerros):
-        if not self.hissiLista[hissiNumero-1].siirry_kerrokseen(targetKerros):
-            print(f"Hissi numero {hissiNumero}, ei ole määritetty kerros")
+        if self.hissiLista[hissiNumero-1].currentKerros == targetKerros:
+            print(f"Hissi {hissiNumero} on jo pyydetyssä kerroksessa!\n")
             return
-        print(f"Hissi numero {hissiNumero} on kerroksessa {self.hissiLista[hissiNumero-1].currentKerros}")
+        print(f"Ajetaan hissi {hissiNumero}: kerroksesta {self.hissiLista[hissiNumero - 1].currentKerros} kerrokseen {targetKerros}")
+        if (targetKerros < self.hissiLista[hissiNumero-1].alinKerros
+            or targetKerros > self.hissiLista[hissiNumero-1].ylinKerros):
+            print(f"Hissi numero {hissiNumero}: {targetKerros} ei ole määritetty kerros\n")
+            return
+        self.hissiLista[hissiNumero-1].siirry_kerrokseen(targetKerros)
+        print(f"Hissi numero {hissiNumero} on saapunut kerrokseen {self.hissiLista[hissiNumero-1].currentKerros}\n")
         return
-
 
 class Hissi:
     def __init__(self, alinKerros, ylinKerros):
@@ -22,15 +27,11 @@ class Hissi:
 
     #Metodi jolla hissin kerrosta siirretään
     def siirry_kerrokseen(self, targetKerros):
-        if self.alinKerros <= targetKerros <=self.ylinKerros:
-            if self.currentKerros > targetKerros:
-                self.kerros_alas()
-            elif self.currentKerros < targetKerros:
-                self.kerros_ylös()
-            if self.currentKerros != targetKerros:
-                self.siirry_kerrokseen(targetKerros)
-            return True
-        return False
+        while self.currentKerros > targetKerros:
+            self.kerros_alas()
+        while self.currentKerros < targetKerros:
+            self.kerros_ylös()
+        return
 
     #Metodi jolla hissi liikkuu ylös
     def kerros_ylös(self):
