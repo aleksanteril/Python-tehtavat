@@ -8,16 +8,17 @@ class Hissi:
 
     #Metodi jolla hissin kerrosta siirretään
     def siirry_kerrokseen(self, targetKerros):
-        if self.alinKerros <= targetKerros <=self.ylinKerros:
-            if self.currentKerros > targetKerros:
-                self.kerros_alas()
-            elif self.currentKerros < targetKerros:
-                self.kerros_ylös()
-            if self.currentKerros != targetKerros:
-                self.siirry_kerrokseen(targetKerros)
+        if self.alinKerros > targetKerros or self.ylinKerros < targetKerros:
+            print("Ei olemassaoleva kerros!")
             return
-        print("Ei olemassaoleva kerros!")
+        if self.currentKerros > targetKerros:
+            self.kerros_alas()
+        elif self.currentKerros < targetKerros:
+            self.kerros_ylös()
+        if self.currentKerros != targetKerros:
+            self.siirry_kerrokseen(targetKerros)
         return
+
 
     #Metodi jolla hissi liikkuu ylös
     def kerros_ylös(self):
