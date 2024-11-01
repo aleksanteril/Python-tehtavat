@@ -7,15 +7,12 @@ app = Flask(__name__)
 #Tarkistetaan onko syötetty luku alkuluku
 #Alkuluku = True jos on, muuten false
 def alkulukuTarkistaja(luku):
-    Alkuluku = True
     if luku == 1 or luku == 0:
-        Alkuluku = True
-        return Alkuluku
+        return False
     for i in range(2,luku):
         if luku % i == 0:
-            Alkuluku = False
-            break
-    return Alkuluku
+            return False
+    return True
 
 
 @app.route('/alkuluku/<inluku>')

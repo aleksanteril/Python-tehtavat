@@ -37,6 +37,7 @@ def asiakasKysely():
         return Response(response=json.dumps(vastaus), status=200, mimetype='application/json')
     except:
         vastaus = {
+            "status": 400,
             "teksti": "Tietoa ei löytynyt tai tapahtui virhe"
         }
         return Response(response=json.dumps(vastaus), status=400, mimetype='application/json')
