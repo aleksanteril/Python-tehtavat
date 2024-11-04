@@ -1,8 +1,9 @@
 
 import requests
+import api_key
 
 #Api-key, poistettu githubista
-key = ###
+key = api_key.openweatherkey
 
 #Kysytään käyttäjältä paikkakunta joka haetaan
 paikka = input("Syötä paikkakunta: ")
