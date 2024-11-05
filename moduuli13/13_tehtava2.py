@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 #Hakee nimen ja kaupungin, (nimi, kaupunki)
 def haeTietokannasta(icao):
-    query = 'SELECT name, municipality FROM airport WHERE ident = %s;'
+    query = 'SELECT ident, name, municipality FROM airport WHERE ident = %s;'
     cursor = yhteys.cursor()
     cursor.execute(query, (icao,))
     vastausTuple = cursor.fetchall()[0]
@@ -31,8 +31,9 @@ def asiakasKysely():
         icao = args.get('icao')
         tiedotTuple = haeTietokannasta(icao)
         vastaus = {
-            "Nimi": tiedotTuple[0],
-            "Kaupunki": tiedotTuple[1]
+            "ICAO": tiedotTuple[0],
+            "Nimi": tiedotTuple[1],
+            "Kaupunki": tiedotTuple[2]
         }
         return Response(response=json.dumps(vastaus), status=200, mimetype='application/json')
     except:
